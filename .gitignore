@@ -1,0 +1,10 @@
+# git ignore file
+Release
+Debug
+*.ipch
+*.sdf
+*.opensdf
+*.user
+*.suo
+*.obj
+*.aps

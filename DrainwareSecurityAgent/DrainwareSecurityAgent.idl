@@ -1,0 +1,133 @@
+// DrainwareSecurityAgent.idl : código fuente IDL de DrainwareSecurityAgent
+//
+
+// La herramienta MIDL procesa este archivo y
+// genera la biblioteca de tipos (DrainwareSecurityAgent.tlb) y el código de cálculo de referencias.
+
+import "oaidl.idl";
+import "ocidl.idl";
+
+[
+	object,
+	uuid(9D26A715-3400-4C3A-B118-AD5E221BD014),
+	dual,
+	nonextensible,
+	pointer_default(unique)
+]
+interface IDwService : IDispatch{
+	typedef enum TEXT_TYPE_ENUM
+	{
+		TYPE_CLIPBOARD = 0x01,
+		TYPE_KEYLOGGER = 0x02,
+		TYPE_OCR = 0x04,
+		TYPE_FILE = 0x08,
+		TYPE_PRINTER = 0x10,
+		TYPE_ATP = 0x20,
+		TYPE_UNTRUSTED_APP = 0x40,
+		TYPE_LEVEL_INFO = 0x100,
+		TYPE_LEVEL_WARNING = 0x200,
+		TYPE_LEVEL_ERROR = 0x400
+	}TEXT_TYPE;
+
+	typedef enum FILE_TYPE_ENUM
+    {
+		TYPE_FILE_NONE = 0,
+		TYPE_NETWORK_DEVICE	= 0x01,
+		TYPE_PENDRIVE	= 0x02,
+		TYPE_SKY_DRIVE	= 0x04,
+		TYPE_DROPBOX	= 0x08,
+		TYPE_GOOGLE_DRIVE = 0x10,
+		TYPE_APPLICATION_FILTER = 0x20
+    }FILE_TYPE;
+
+	typedef enum PROTECTION_TYPE_ENUM
+	{
+		PROTECT_PRINTER = 0x01,
+		PROTECT_CLIPBOARD_IMG = 0x02,
+		PROTECT_GOOGLEDRIVE = 0x04,
+		PROTECT_DROPBOX = 0x08,
+		PROTECT_SKYDRIVE = 0x10,
+		PROTECT_PENDRIVE = 0x20,
+		PROTECT_NETWORKDEVICE_SRC = 0x40,
+		PROTECT_NETWORKDEVICE_DST = 0x80,
+		PROTECT_CLIPBOARD_TXT = 0x100,
+		PROTECT_KEYLOGGER = 0x200,
+		PROTECT_CLOUD = 0x400
+	}PROTECTION_TYPE;
+
+	[id(1)] HRESULT CheckText( BSTR bstrText, TEXT_TYPE nTextType, BSTR bstrApp, [out] VARIANT_BOOL* bEraseText );
+	[id(2)] HRESULT CheckFile( FILE_TYPE nFileType, BSTR bstrFileOrg, BSTR bstrFileDest, VARIANT_BOOL bDestIsExternFolder, [out] VARIANT_BOOL* bDeleteFile );
+	[id(3)] HRESULT SkipFile(BSTR bstrFileDest);
+	[id(4)] HRESULT MonitorProcess(ULONG dwProcId);
+	[id(5)] HRESULT SetScreenShot( [in, size_is(cb)] BYTE* pImage, [in] DWORD cb );
+	[id(6)] HRESULT SendATPEvent( BSTR bstrUserName, BSTR bstrJSON );
+	[id(7)] HRESULT LoadATP( BSTR bstrProcName, [out] VARIANT_BOOL* bLoad );
+	[id(8)] HRESULT CheckRemoteUnit( BSTR bstrFileOrg, BSTR bstrFileDest, VARIANT_BOOL bDestIsExternFolder, [out] VARIANT_BOOL* bDeleteFile );
+	[id(9)] HRESULT CheckTextExt( BSTR bstrText, TEXT_TYPE nTextType, BSTR bstrApp, [out] VARIANT_BOOL* bEraseText, [in, size_is(cb)] BYTE* pImage, [in] DWORD cb );
+	[id(10)] HRESULT IsLicensed( [out] VARIANT_BOOL *bLicensed );
+	[id(11)] HRESULT SetLicense(BSTR bstrLic1, BSTR bstrLic2, BSTR bstrLic3, BSTR bstrLic4, [out]BSTR *bstrUrl, [out,retval] LONG* pnCode);
+	[id(12)] HRESULT GetProtectionType( [out] ULONG *pt );
+	[id(13)] HRESULT AddIfRemoteFile( BSTR bstrDestDir, BSTR bstrFileOrg );
+	[id(14)] HRESULT RemoveADS( BSTR bstrFileOrg );
+	[id(15)] HRESULT AddProxy( BSTR bstrProxyServer, LONG bEnable );
+};
+
+[
+	uuid(DB005122-6548-41C3-B16D-97EB578646B2),
+	pointer_default(unique)
+]
+interface _IDwServiceEvents : IUnknown 
+{
+	HRESULT OnClose( VARIANT_BOOL bUpdate );
+	HRESULT OnShowTrayWindow( ULONG nMsgType, [out] VARIANT_BOOL *bShowed );
+	HRESULT OnGetScreenShot( [out] VARIANT_BOOL *bShowed );
+	HRESULT OnShowCheckDialog( ULONG nMsgType, [out] VARIANT_BOOL *bShowed );
+	HRESULT OnShowUserMessage( BSTR bstrMsg );
+	HRESULT OnActiveModules( ULONG nActiveModules );
+};
+
+[
+	object,
+	uuid(A6631F8B-645B-4527-953A-BC9532DB824F),
+	dual,
+	nonextensible,
+	pointer_default(unique)
+]
+interface IDwPrinterService : IDispatch{
+	[id(1)] HRESULT PrintJob(BSTR bstrDocName, BSTR bstrPath, BSTR bstrPrinter, BSTR bstrPrinterName);
+	[id(2)] HRESULT IsClosing( [out] VARIANT_BOOL *pRet );
+};
+[
+	uuid(C75BF99C-09DA-4D38-B216-7A50BC145237),
+	version(1.0),
+]
+library DrainwareSecurityAgentLib
+{
+	importlib("stdole2.tlb");
+	[
+		uuid(F5A8D13D-2D5E-43B8-9488-3AD8520F523E)		
+	]
+	coclass DwService
+	{
+		[default] interface IDwService;
+		[default, source] interface _IDwServiceEvents;
+	};
+	[
+		uuid(AAFC9CFA-EA25-48CF-882D-9D02E6CE7043)		
+	]
+	dispinterface _IDwPrinterServiceEvents
+	{
+		properties:
+		methods:
+			[id(1)] HRESULT OnCloseService(void);
+	};
+	[
+		uuid(A7970EA7-1017-4CD5-B7D0-D5189F158697)		
+	]
+	coclass DwPrinterService
+	{
+		[default] interface IDwPrinterService;
+		[default, source] dispinterface _IDwPrinterServiceEvents;
+	};
+};
+

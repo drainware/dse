@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Archivos de código fuente">
+      <UniqueIdentifier>{7eca5418-4886-4c3c-97be-00a81d2c1fdb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Archivos generados">
+      <UniqueIdentifier>{d6ea4a7f-4e51-4c6c-bb9e-0f87378ff9f1}</UniqueIdentifier>
+      <SourceControlFiles>False</SourceControlFiles>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="DwUserAgentps.def" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="DwUserAgent_i.c">
+      <Filter>Archivos generados</Filter>
+    </ClCompile>
+    <ClCompile Include="DwUserAgent_p.c">
+      <Filter>Archivos generados</Filter>
+    </ClCompile>
+    <ClCompile Include="dlldata.c">
+      <Filter>Archivos generados</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>

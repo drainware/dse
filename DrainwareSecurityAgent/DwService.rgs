@@ -1,0 +1,17 @@
+HKCR
+{
+	NoRemove CLSID
+	{
+		ForceRemove {F5A8D13D-2D5E-43B8-9488-3AD8520F523E} = s 'DwService Class'
+		{
+			ForceRemove Programmable
+			LocalServer32 = s '%MODULE%'
+			{
+				val ServerExecutable = s '%MODULE_RAW%'
+			}
+			val AppID = s '%APPID%'
+			TypeLib = s '{C75BF99C-09DA-4D38-B216-7A50BC145237}'
+			Version = s '1.0'
+		}
+	}
+}

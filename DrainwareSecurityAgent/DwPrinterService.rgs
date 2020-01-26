@@ -1,0 +1,27 @@
+HKCR
+{
+	DwService.DwPrinterService.1 = s 'DwPrinterService Class'
+	{
+		CLSID = s '{A7970EA7-1017-4CD5-B7D0-D5189F158697}'
+	}
+	DwService.DwPrinterService = s 'DwPrinterService Class'
+	{		
+		CurVer = s 'DwService.DwPrinterService.1'
+	}
+	NoRemove CLSID
+	{
+		ForceRemove {A7970EA7-1017-4CD5-B7D0-D5189F158697} = s 'DwPrinterService Class'
+		{
+			ProgID = s 'DwService.DwPrinterService.1'
+			VersionIndependentProgID = s 'DwService.DwPrinterService'
+			ForceRemove Programmable
+			LocalServer32 = s '%MODULE%'
+			{
+				val ServerExecutable = s '%MODULE_RAW%'
+			}
+			val AppID = s '%APPID%'
+			TypeLib = s '{C75BF99C-09DA-4D38-B216-7A50BC145237}'
+			Version = s '1.0'
+		}
+	}
+}

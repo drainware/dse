@@ -1,0 +1,24 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "SetupCloud", "SetupCloud\SetupCloud.vdproj", "{07B91728-C774-4B30-ABAA-02D0998B58FA}"
+EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "SetupCloud32", "SetupCloud32\SetupCloud32.vdproj", "{CB4A2DA7-7015-4663-BDD9-7105A127D30E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Default = Debug|Default
+		Release|Default = Release|Default
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{07B91728-C774-4B30-ABAA-02D0998B58FA}.Debug|Default.ActiveCfg = Debug
+		{07B91728-C774-4B30-ABAA-02D0998B58FA}.Release|Default.ActiveCfg = Release
+		{07B91728-C774-4B30-ABAA-02D0998B58FA}.Release|Default.Build.0 = Release
+		{CB4A2DA7-7015-4663-BDD9-7105A127D30E}.Debug|Default.ActiveCfg = Debug
+		{CB4A2DA7-7015-4663-BDD9-7105A127D30E}.Release|Default.ActiveCfg = Release
+		{CB4A2DA7-7015-4663-BDD9-7105A127D30E}.Release|Default.Build.0 = Release
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

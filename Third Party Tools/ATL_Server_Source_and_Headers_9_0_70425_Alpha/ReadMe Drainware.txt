@@ -1,0 +1,1 @@
+Copy include into VC directories at C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\atlmfc

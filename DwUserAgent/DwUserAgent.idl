@@ -1,0 +1,28 @@
+// DwUserAgent.idl : código fuente IDL de DwUserAgent
+//
+
+// La herramienta MIDL procesa este archivo y
+// genera la biblioteca de tipos (DwUserAgent.tlb) y el código de cálculo de referencias.
+
+import "oaidl.idl";
+import "ocidl.idl";
+
+[
+	uuid(3857C976-FB00-47B2-8705-CC405A5C6B16),
+	version(1.0),
+]
+library DwUserAgentLib
+{
+	importlib("stdole2.tlb");
+	//[
+	//	object,
+	//	uuid(DB005122-6548-41C3-B16D-97EB578646B2),
+	//	nonextensible,
+	//	pointer_default(unique)
+	//]
+	//interface _IDwServiceEventsCli : IUnknown {
+	//	[id(1)] HRESULT OnClose();
+	//};
+
+};
+

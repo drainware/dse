@@ -1,0 +1,65 @@
+HKCR
+{
+	NoRemove CLSID
+	{
+		ForceRemove {6933EA63-28B6-42D2-8457-2862FCF22FD3} = s 'DrainwareShellExt Class'
+		{
+			InprocServer32 = s '%MODULE%'
+			{
+				val ThreadingModel = s 'Apartment'
+			}
+		}
+	}
+    NoRemove Drive
+    {
+        NoRemove shellex
+        {
+            NoRemove DragDropHandlers
+            {
+                ForceRemove DrainwareShellExt = s {6933EA63-28B6-42D2-8457-2862FCF22FD3}
+            }
+        }
+    }
+    NoRemove Directory
+    {
+        NoRemove shellex
+        {
+            NoRemove DragDropHandlers
+            {
+                ForceRemove DrainwareShellExt = s {6933EA63-28B6-42D2-8457-2862FCF22FD3}
+            }
+        }
+    }
+    NoRemove Folder
+    {
+        NoRemove shellex
+        {
+            NoRemove DragDropHandlers
+            {
+                ForceRemove DrainwareShellExt = s {6933EA63-28B6-42D2-8457-2862FCF22FD3}
+            }
+        }
+    }
+}
+HKLM
+{
+	NoRemove Software
+	{
+		NoRemove Microsoft
+		{
+			NoRemove Windows
+			{
+				NoRemove CurrentVersion
+				{
+					NoRemove 'Shell Extensions'
+					{
+						NoRemove Approved
+						{
+							ForceRemove val {6933EA63-28B6-42D2-8457-2862FCF22FD3} = s 'DrainwareShellExt'	
+						}
+					}
+				}
+			}
+		}
+	}
+}

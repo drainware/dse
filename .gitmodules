@@ -1,0 +1,4 @@
+[submodule "analyzefile"]
+	path = analyzefile
+	url = https://github.com/drainware/analyzefile.git
+	branch = master

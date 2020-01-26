@@ -1,0 +1,103 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="CDwUserAgentModule">
+    <Position X="2.25" Y="0.5" Width="1.5" />
+    <NestedTypes>
+      <Typedef Name="CDwUserAgentModule::_Base" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>DwUserAgent.cpp</NewMemberFileName>
+        </TypeIdentifier>
+      </Typedef>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAI=</HashCode>
+      <FileName>DwUserAgent.cpp</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CDriveWatcher">
+    <Position X="0.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAYAgAhEAAAAAAAAABAAACBBBQACAAQAAAAAAAA=</HashCode>
+      <FileName>DriveWatcher.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CKeyLogger">
+    <Position X="4" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAAAICAAACAEQAAAAAAAABEABAAAAQACIgQAAAAAAAA=</HashCode>
+      <FileName>KeyLogger.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CLicenseDlg">
+    <Position X="0.5" Y="5" Width="1.5" />
+    <NestedTypes>
+      <Enum Name="CLicenseDlg::__unnamed_enum_026e_1" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>LicenseDlg.h</NewMemberFileName>
+        </TypeIdentifier>
+      </Enum>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>AAAAACEAAAAAEAAAAAAAACARAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>LicenseDlg.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CTrayWindow">
+    <Position X="2.25" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BACrAAgBIAAgiCAAAIAECBAAACAAAEAAAEACgBAAAAg=</HashCode>
+      <FileName>TrayWindow.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CWndUserAgent" BaseTypeListCollapsed="true">
+    <Position X="4" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAABIgiAgBoAQAgAQgqAAAAEACAAAQIEQIICCAAwAgA=</HashCode>
+      <FileName>WndUserAgent.h</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Struct Name="WndData">
+    <Position X="8.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>KeyLogger.h</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="_IID">
+    <Position X="6.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAgAAAAACAQABAAAAAAAA=</HashCode>
+      <FileName>DwUserAgent_i.c</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Typedef Name="IID" Collapsed="true">
+    <Position X="8.5" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>c:\program files (x86)\microsoft sdks\windows\v7.0a\include\guiddef.h</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="CLSID" Collapsed="true">
+    <Position X="6.5" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>c:\program files (x86)\microsoft sdks\windows\v7.0a\include\guiddef.h</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Interface Name="ITrayWindow">
+    <Position X="6.5" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ITrayWindow.h</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Enum Name="eTrayIcons">
+    <Position X="8.5" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAEAABABAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>TrayWindow.h</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
